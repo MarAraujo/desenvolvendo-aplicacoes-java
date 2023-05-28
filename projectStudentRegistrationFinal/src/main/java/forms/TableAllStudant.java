@@ -69,7 +69,6 @@ public class TableAllStudant extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         reportStudant = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -78,9 +77,9 @@ public class TableAllStudant extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 400));
         setPreferredSize(new java.awt.Dimension(800, 400));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 20, 490));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 720, 30));
 
         reportStudant.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -109,8 +108,6 @@ public class TableAllStudant extends javax.swing.JFrame {
         dataTable.setEnabled(false);
         dataTable.setRowHeight(30);
         dataTable.setShowGrid(true);
-        dataTable.setShowHorizontalLines(true);
-        dataTable.setShowVerticalLines(true);
         jScrollPane1.setViewportView(dataTable);
 
         reportStudant.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 660, 230));
@@ -160,7 +157,6 @@ public class TableAllStudant extends javax.swing.JFrame {
     private javax.swing.JTable dataTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel reportStudant;
     // End of variables declaration//GEN-END:variables

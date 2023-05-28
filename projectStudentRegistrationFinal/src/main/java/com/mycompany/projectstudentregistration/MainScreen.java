@@ -5,19 +5,25 @@
 package com.mycompany.projectstudentregistration;
 
 import forms.TableAllStudant;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 /**
  *
  * @author marce
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class MainScreen extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public MainScreen() {
         initComponents();
+
     }
 
     private void showDataInTable() {
@@ -48,24 +54,28 @@ public class NewJFrame extends javax.swing.JFrame {
         btnChange = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtSearchName = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Sistema de Registro de Alunos");
         jLabel6.setToolTipText("");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 660, 60));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 660, 60));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Identificação", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 51, 255))); // NOI18N
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtEnrollmet.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +106,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4.setText("E-mail");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 470, 150));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 470, 150));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ações", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 51, 255))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,8 +143,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jPanel2.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 80, 25));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 470, 80));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 0, 20, 490));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 470, 80));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pesquisar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 51, 255))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,7 +170,14 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel8.setText("Nome");
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 470, 100));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 470, 100));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\marce\\Documents\\ws-netBeans\\OO_Java_FMF\\projectStudentRegistrationFinal\\img\\Schoolleft.png")); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 110, 490));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\marce\\Documents\\ws-netBeans\\OO_Java_FMF\\projectStudentRegistrationFinal\\img\\SchooRightt.png")); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -199,7 +215,7 @@ public class NewJFrame extends javax.swing.JFrame {
             serachForName();
         } else if (!txtSearch.getText().isEmpty() && !txtSearchName.getText().isEmpty()) {
             searchRegistration();
-        }else{
+        } else {
             reportAllStudant();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -230,20 +246,21 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new MainScreen().setVisible(true);
             }
         });
     }
@@ -255,6 +272,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnInclude;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -326,7 +345,7 @@ public class NewJFrame extends javax.swing.JFrame {
 //            JOptionPane.showConfirmDialog(null, "Atualizado com Sucesso!");
                 clearData();
             }
-         } catch (NumberFormatException ex) {
+        } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Dados da Matrícula e Idade Incorreto!\nInforme somete números!", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
         }
     }

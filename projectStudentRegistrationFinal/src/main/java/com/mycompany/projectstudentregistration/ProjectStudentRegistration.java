@@ -6,7 +6,8 @@ package com.mycompany.projectstudentregistration;
 public class ProjectStudentRegistration {
 
     public static void main(String[] args) {
-        NewJFrame manu = new NewJFrame();
+        MainScreen manu = new MainScreen();
         manu.setVisible(true);
     }
+    
 }

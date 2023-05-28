@@ -5,7 +5,7 @@
  *
  * @author marce
  */
-package app.client_server;
+package app.server;
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 import java.util.ArrayList;
 
 public class ChatServer {
@@ -22,7 +23,11 @@ public class ChatServer {
 
     public static void main(String[] args) throws Exception {
         System.out.println("Aguardando novos usuários...");
-        ServerSocket sv = new ServerSocket(9086);
+        InetAddress host = InetAddress.getByName("192.168.15.13"); // Substitua pelo seu endereço IP
+        int port = 9086; // Substitua pela porta desejada
+        ServerSocket sv = new ServerSocket(port, 50, host);
+        //ServerSocket sv = new ServerSocket(9086);
+
         while (true) {
             Socket user = sv.accept();
             System.out.println("Usuário conectado!");
@@ -70,25 +75,25 @@ class ChatDriver extends Thread {
                 }
                 counter++;
             }
-            
+
             outputData.println("NOME_ACEITO" + name);
             ChatServer.printWriters.add(outputData);
-            
-            while(true){
+
+            while (true) {
                 String msg = inputData.readLine();
-                
-                if(msg == null){
+
+                if (msg == null) {
                     return;
                 }
-                
-                for(PrintWriter writer : ChatServer.printWriters){
+
+                for (PrintWriter writer : ChatServer.printWriters) {
                     writer.println(name + ":" + msg);
                 }
             }
-            
+
         } catch (Exception ex) {
             System.out.println("Erro no Servidor: " + ex.getMessage());
-            ex.printStackTrace();            
+            ex.printStackTrace();
         }
     }
 }
